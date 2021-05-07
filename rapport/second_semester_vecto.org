@@ -498,6 +498,7 @@ typedef union {
   Cette version est la première version appliquée, ces spécifications sont implémentées en utilisant des algorithmes et des
   modèles de programmation adaptés à leurs différentes machines.Dans cette version, ils ont utilises des algorithmes 
   spécifiques pour l’ensemble des problèmes rencontrés à des points de références qui puissent assurer :
+  
   -l’implémentation de nouveau algorithmes et fonctions compatibles au parallélisme.
   - vérification de la performance ainsi que l’exactitude des résultats retournés par l’exécution.
   -Facilité de travailler et de s’adapter avec les systèmes multicœurs fiables ,ainsi que la distribution

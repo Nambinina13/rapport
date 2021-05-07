@@ -564,14 +564,14 @@ typedef union {
    - Classes D , E , F utilisée pour les gros problèmes de tests 
    - Classe S pour des tests rapides .
    
-** Résultats et discussion
+** Résultats et discussions
   
-  Pour les tests, vu que nos machine ne supporte pas les tailles pour les tests standard et gros problème,
-  donc on est reste sur la classe "S". Ici on a utilise comme compilateur la nouvelle version de verificarlo,
-  c'est à dire la version vectorisé.
-  Comme example on va prendre le benchmark BT et de classe S. Pour pouvoir execute le benchmark, il nous
-  demande un nombre de coeur qui répresente le carré d'un nombre. La figure suivant répresente le résume 
-  du compilation du benchmark BT:
+  Pour les tests, vu que nos machines ne supportent pas les tailles pour les tests standards et gros problème,
+  donc on est restés sur la classe "S". Donc comme vous le voyez ici on a utilisé comme compilateur la nouvelle version de verificarlo,
+  c'est à dire la version vectorisée.
+  On a pris comme exemple le benchmark "BT" et de classe "S". Pour pouvoir executer le benchmark, il nous a
+  demandé un nombre de coeurs qui répresente le carré d'un nombre. La figure suivant représente le résumé 
+  de la compilation du benchmark BT:
   
    <<figure a>>
    #+CAPTION: Rappel des cas spéciaux
@@ -579,7 +579,7 @@ typedef union {
    #+ATTR_LATEX: :width 500px
    [[../ressources/btcompleted.png]]
    
-   Après avoir compile et éxecuté le benchmarck bt, la vectorisation au niveau du programme est répresenter
+   Après avoir compilé et éxecuté le benchmarck BT, la vectorisation au niveau du programme est répresentée
    dans la figure suivante:
    
     <<figure b>>
@@ -588,12 +588,12 @@ typedef union {
    #+ATTR_LATEX: :width 500px
    [[../ressources/vect1.png]]
    
-   Le bechmarck que nous avons testé est ecrit avec le langage fotran et parallèlisé avec MPI. Du coup on peut constaté
-   sur la figure que le niveau de véctorisation est null. Celle-ci peut être dû à la difference de syntax de langage entre
+   Le benchmark que nous avons testé est écrit avec le langage fotran et parallèlisé avec MPI. Du coup on peut constater
+   sur cette figure que le niveau de véctorisation est null. Celle-ci peut être dû à la difference de la syntaxe du langage entre
    le langage C et fortran. 
-   Pour bien observer le niveau de véctorisation sur le benchmark BT, on a récuperé une source de benchmark qui est écrit avec
-   le langace C et parallèliser avec openmp.
-   Les figures suivantes répresenter l'évaluation des véctorisations au niveau du benchmark BT avec 8 threads:
+   Pour bien observer le niveau de véctorisation sur le benchmark BT, on a récuperé une source de benchmarks qui est écrit avec
+   le langace C et parallèlisé avec OpenMP.
+   Les figures suivantes representent l'évaluation de la véctorisation au niveau du benchmark BT avec 8 threads:
    <<figure c>>
    #+CAPTION: Vectorisation au niveau u benckmark BT
    #+NAME: fig:Résume BT benchmark
@@ -602,12 +602,12 @@ typedef union {
    
 * Conclusion
 
-  Le test que nous avons fait à montrer que les opérations vont plus vite avec la véctorisation. A cause de manque de ressource 
-  sur nos machine, on a été obligé de se limité à des tests minimun. Mais ce qui serai été intéressant c'est de pouvoir faire 
-  des tests sur des supércalculateurs avec les différents classe de benchmark et de bien évaluer la pérformance de la machine ainsi
+  Le test que nous avons fait a montré que les opérations vont plus vite avec la véctorisation. À cause du manque de ressources 
+  sur nos machines, on a été obligé de se limiter à des tests minimums. Mais ce qui serai intéressant est de pouvoir faire 
+  des tests sur des supércalculateurs avec les différentes classe de benchmarks et de bien évaluer la performance de la machine ainsi
   que d'observer les niveaux de véctorisation sur une grande taille de calcul.
   
-* Référence
+* Références
 
   <<stdieee>>
   - Aide Mémoire sur le standart IEEE754, Pablo de Oliveira Castro,

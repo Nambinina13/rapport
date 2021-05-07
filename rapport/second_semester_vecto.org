@@ -499,9 +499,10 @@ typedef union {
   Cette version est la première version appliquée, ces spécifications sont implémentées en utilisant des algorithmes et des
   modèles de programmation adaptés à leurs différentes machines.Dans cette version, ils ont utilises des algorithmes 
   spécifier pour l’ensemble des problèmes rencontrés a des points de référence qui puissent assurer :
-  -l’implémentation de nouveau algorithmes et fonctions compatibles au parallélisme
-  - vérification de la performance ainsi que l’exactitude des résultats retournés par l’exécution
-  -Faciliter de travailler et de s’adapter avec les systèmes multicœurs fiable ,ainsi que la facilité de la distribution
+  
+   -l’implémentation de nouveau algorithmes et fonctions compatibles au parallélisme
+   - vérification de la performance ainsi que l’exactitude des résultats retournés par l’exécution
+   -Faciliter de travailler et de s’adapter avec les systèmes multicœurs fiable ,ainsi que la facilité de la distribution
   et communication multicœurs.
   
 *** La version NPB2:

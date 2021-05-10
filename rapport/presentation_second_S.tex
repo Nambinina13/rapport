@@ -1,0 +1,146 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usetheme{Madrid}
+
+\title[Support pour Verificarlo]{Support de MPI et de la vectorisation dans Verificarlo}
+\subtitle{Master Calcul Haute Performance et Simulation}
+
+\author[Hery, Nicolas, Ali]{Hery ANDRIANANTENAINA \\ Nicolas BOUTON \\ Ali LAKBAL}
+
+\institute[]{\textbf{Encadrant:} Eric PETIT}
+
+\date{Année 2020-2021}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Support de la parallélisation}
+    \begin{block}{Introduction}
+      \includegraphics[width=0.6\linewidth]{index.jpeg}
+      source:fr.wikipedia.org
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Différentes types de NAS Benchmarks Parallèle}
+
+    \begin{block}{NPB1}
+      
+        \begin{itemize}
+            \item Introduction des fonctions qui va facilité les parallélismes
+            \item Vérification de la cohérence des résultats et de la performance
+            \item Adaptation avec les systèmes à plusieurs coeurs.
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{NPB2}
+         \begin{itemize}
+            \item Modification des règles sur les analyses comparative
+            \item Accès aux codes sources pour le grand public
+            \item Version parallélisé avec MPI
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{NPB3}
+      \begin{itemize}
+          \item Version parallélisé avec openmp
+          \item Version hybride ou "Multi-zone" 
+      \end{itemize}
+    \end{block}
+
+\end{frame}
+ 
+\begin{frame}{ Différentes types de benchmark}
+    \begin{block}{Types}
+      \begin{itemize}
+        \item IS : "Integer Sort"
+        \item EP : " Embarrassingly Parallel"
+        \item CG : "Conjugate Gradient" 
+        \item MG : "Multi-Grid"
+        \item FT : "Fourier Transform"
+        \item BT: "Block Tri-diagonal solver"
+        \item SP: "Scalar Penta-diagonal solver"
+        \item LU: "Lower-Upper Gauss-Seidel solver"
+    \end{itemize}
+    \end{block}
+        
+    \begin{block}{Classe}
+      \begin{itemize}
+        \item Classe S 
+        \item  Classes A , B , C 
+        \item Classes D , E , F
+      \end{itemize}
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{ Résultat et discussion}
+    \begin{block}{Compilation}
+      CC=OMPI\_FC=verificarlo-f  mpif90
+    \end{block}
+    
+    \begin{block}{Problème}
+      Dimension sept pour les tableaux
+    \end{block}
+    
+    \begin{block}{Solution}
+      Ré-compilation
+      \begin{itemize}
+          \item CC=clang
+          \item CXX=clang++
+          \item FC=flang
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Résultat et discussion}
+    \begin{block}{Test}
+      \includegraphics[width=0.6\linewidth]{../ressources/btcompleted.png}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Résultat et discussion}
+    \begin{block}{Résultat vectorisation NPB-MPI FORTRAN}
+      \includegraphics[width=0.6\linewidth]{../ressources/vect1.png}
+    \end{block}
+    
+    \begin{block}{Résultat vectorisation NPB-OPENMP C}
+      \includegraphics[width=0.6\linewidth]{../ressources/vcopenmp.png}
+    \end{block}
+\end{frame}
+
+\begin{frame}{ Conclusion}
+    \begin{block}{Test super-calculateur}
+      \begin{itemize}
+          \item Évaluation de la vectorisation sur le jeu d'instruction AVX512
+          \item Faire des tests sur les problèmes de tailles standards ou les gros problèmes
+      \end{itemize}
+    \end{block}
+    
+    \begin{block}{Conclusion générale}
+    
+        \begin{itemize}
+            \item  Le module de Calcul Numérique sur la précision numérique qui est un des sujets principaux de verificarlo.
+            \item Le module d’Architecture Parallèle et de Technique d’Optimisation Parallèle pour les mesures de performances et les benchmarks.
+            \item  les modules traitant la parallélisation avec MPI et OpenMP comme Algorithme de Programmation Parallèle 
+        \end{itemize}
+     
+    \end{block}
+\end{frame}
+\end{document}
